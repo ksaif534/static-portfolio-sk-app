@@ -1,0 +1,1 @@
+<x-projects :overview="$overview" :json-data="$jsonData" />

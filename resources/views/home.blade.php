@@ -1,0 +1,1 @@
+<x-home :overview="$overview" :json-data="$jsonData" />

@@ -1,0 +1,1 @@
+<x-project-details :overview="$overview" :project-details="$projectDetails" />
