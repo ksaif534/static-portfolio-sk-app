@@ -12,14 +12,15 @@ class WorkExperienceController extends Controller
      */
     public function index()
     {
-        $overview   = 'Work Experience';
-        $filepath   = 'work-experience.json';
+        $overview = 'Work Experience';
+        $filepath = 'work-experience.json';
         if (Storage::disk('custom')->exists($filepath)) {
-            $jsonData   = Storage::disk('custom')->get($filepath);
-        }else {
-            $jsonData   = null;
+            $jsonData = Storage::disk('custom')->get($filepath);
+        } else {
+            $jsonData = null;
         }
-        return view('work-experience',compact('overview','jsonData'));
+
+        return view('work-experience', compact('overview', 'jsonData'));
     }
 
     /**
@@ -27,7 +28,6 @@ class WorkExperienceController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -35,7 +35,6 @@ class WorkExperienceController extends Controller
      */
     public function store(Request $request)
     {
-        //
     }
 
     /**
@@ -43,7 +42,6 @@ class WorkExperienceController extends Controller
      */
     public function show(string $id)
     {
-        //
     }
 
     /**
@@ -51,7 +49,6 @@ class WorkExperienceController extends Controller
      */
     public function edit(string $id)
     {
-        //
     }
 
     /**
@@ -59,7 +56,6 @@ class WorkExperienceController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
     }
 
     /**
@@ -67,6 +63,5 @@ class WorkExperienceController extends Controller
      */
     public function destroy(string $id)
     {
-        //
     }
 }

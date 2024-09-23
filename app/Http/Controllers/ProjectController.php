@@ -2,22 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Traits\GetProjects;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use App\Traits\GetProjects;
 
 class ProjectController extends Controller
 {
     use GetProjects;
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $overview   = $this->getOverview();
-        $filepath   = $this->getFilePath();
-        $jsonData   = $this->projects($filepath);
-        return view('projects',compact('overview','jsonData'));
+        $overview = $this->getOverview();
+        $filepath = $this->getFilePath();
+        $jsonData = $this->projects($filepath);
+
+        return view('projects', compact('overview', 'jsonData'));
     }
 
     /**
@@ -25,7 +27,6 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -33,7 +34,6 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
     }
 
     /**
@@ -41,18 +41,19 @@ class ProjectController extends Controller
      */
     public function show(string $id)
     {
-        $overview       = $this->getOverview();
-        $filepath       = $this->getFilePath();
-        $jsonData       = $this->projects($filepath);
-        $data           = json_decode($jsonData, true);
-        $projectDetails = null;   
+        $overview = $this->getOverview();
+        $filepath = $this->getFilePath();
+        $jsonData = $this->projects($filepath);
+        $data = json_decode($jsonData, true);
+        $projectDetails = null;
         foreach ($data['projects'] as $item) {
             if ($item['id'] == $id) {
                 $projectDetails = $item;
             }
         }
         $projectDetails = collect($projectDetails);
-        return view('project-details',compact('overview','projectDetails'));
+
+        return view('project-details', compact('overview', 'projectDetails'));
     }
 
     /**
@@ -60,7 +61,6 @@ class ProjectController extends Controller
      */
     public function edit(string $id)
     {
-        //
     }
 
     /**
@@ -68,7 +68,6 @@ class ProjectController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
     }
 
     /**
@@ -76,6 +75,5 @@ class ProjectController extends Controller
      */
     public function destroy(string $id)
     {
-        //
     }
 }

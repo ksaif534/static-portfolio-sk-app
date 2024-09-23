@@ -6,7 +6,7 @@
                     $data = json_decode($jsonData, true);
                 @endphp
                 @foreach ($data['projects'] as $project)
-                    <div class="col-md">
+                    <div class="col-md-4">
                         <div class="card">
                             <div class="card-header" style="background-image: url({{ asset($project['image_path']) }});background-size: cover; background-position: center;width: 100%;height: 200px">
                                 

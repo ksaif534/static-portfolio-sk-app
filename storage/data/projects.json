@@ -20,6 +20,13 @@
             "tech_specs": "PHP,Laravel,Tailwind",
             "description": "This a test/demo application which takes in feedback from anonymous users and displays those anonymous feedback to registered users.",
             "image_path": "assets/distribution/img/anon-feedback-ss.png"
+        },
+        {
+            "id": "4",
+            "name": "Simple Banking Application(Bangubank)",
+            "tech_specs": "PHP, Tailwind CSS",
+            "description": "A very simple banking application that deposits, withdraws and transfers money from one account to another.",
+            "image_path": "assets/distribution/img/bangubank.png"
         }
     ]
 }
